@@ -1,4 +1,4 @@
-/* SplitMate – World-Demo UI (single file, logic unchanged) */
+/* SplitMate– md.raihanulislam.x@gmail.com */
 import React, { useState, useEffect, useMemo } from 'react';
 /* ----------  HELPERS  ---------- */
 const uid = () => Math.random().toString(36).substr(2, 9);
@@ -74,9 +74,7 @@ const openPrintSummary = (group, balances, totalGroupSpendingForBudget) => {
                   .filter((e) => e.category === c.name && !e.isPersonal)
                   .reduce((s, e) => s + e.amount, 0);
                 return amt
-                  ? `<tr><td><span class="icon">${c.icon}</span>${
-                      c.name
-                    }</td><td class="right">$${fmt(amt)}</td></tr>`
+                  ? `<tr><td><span class="icon">${c.icon}${c.name}</span></td><td class="right">$${fmt(amt)}</td></tr>`
                   : '';
               }).join('')}
             </tbody>
@@ -102,7 +100,22 @@ const openPrintSummary = (group, balances, totalGroupSpendingForBudget) => {
 /* ----------  MAIN COMPONENT  ---------- */
 export default function App() {
   /* ----------------  STATE  ---------------- */
-  const [groups, setGroups] = useState([]);
+  const STORAGE_KEY = 'splitmate-data';
+  const [groups, setGroups] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(groups));
+    } catch {}
+  }, [groups]);
+
   const [currentGroupId, setCurrentGroupId] = useState(null);
   /* form */
   const [desc, setDesc] = useState('');
@@ -455,6 +468,7 @@ export default function App() {
           )}
         </Container>
         <style>{worldDemoCss}</style>
+        <UserGuideButton />
       </div>
     );
   }
@@ -1302,4 +1316,91 @@ body { margin: 0; }
 .category-bar { margin-bottom: 8px; }
 `;
 
-/* ----------  END  ---------- */
+/* ---------- USER GUIDE ---------- */
+const UserGuideButton = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      {/* fixed button */}
+      <button
+        onClick={() => setOpen(true)}
+        style={{
+          position: 'fixed',
+          top: '1rem',
+          right: '1rem',
+          zIndex: 300,
+          background: 'linear-gradient(135deg,#00fff0,#00c2ff)',
+          color: '#000',
+          border: 'none',
+          borderRadius: 12,
+          padding: '0.6rem 1rem',
+          fontSize: '0.875rem',
+          fontWeight: 700,
+          cursor: 'pointer',
+          boxShadow: '0 4px 12px rgba(0,255,240,.4)',
+        }}
+      >
+        📖 User Guide
+      </button>
+
+      {/* slide-down guide */}
+      {open && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 400,
+            background: 'rgba(0,0,0,.65)',
+            backdropFilter: 'blur(4px)',
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            overflowY: 'auto',
+            padding: '1rem',
+          }}
+          onClick={() => setOpen(false)}
+        >
+          <div
+            style={{
+              width: '100%',
+              maxWidth: 560,
+              background: '#0d1117',
+              border: '1px solid #30363d',
+              borderRadius: 16,
+              marginTop: '4vh',
+              padding: '1.5rem 2rem 2rem',
+              color: '#c9d1d9',
+              lineHeight: 1.7,
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Flex between style={{ marginBottom: '1.5rem' }}>
+              <h2 style={{ color: '#00fff0', margin: 0 }}>Welcome to SplitMate 🎉</h2>
+              <Button onClick={() => setOpen(false)}>✕</Button>
+            </Flex>
+
+            <p><strong>SplitMate</strong> is the fastest way to split expenses with friends. Follow the steps below and you’ll be a pro in 60&nbsp;seconds!</p>
+
+            <ol style={{ paddingLeft: '1.2rem', marginBottom: '2rem' }}>
+              <li><strong>1. Create a Group 🏕️</strong><br/>Tap <em>“Create New Group”</em>, give it a name (e.g. “Weekend Hike”) and press <em>Create</em>.</li>
+              <li><strong>2. Add Members 👥</strong><br/>Inside the group, open the <em>Members</em> drawer → type a friend’s name → <em>Add</em>. Repeat for everyone.</li>
+              <li><strong>3. Set Budget (optional) 💰</strong><br/>In the <em>Group Budget</em> card enter the total pot you plan to spend together.</li>
+              <li><strong>4. Log Expenses 🧾</strong><br/>Fill the <em>Add Expense</em> form: what, how much, category, who paid, and who should split it. Tick <em>Personal expense</em> if it’s just for you.</li>
+              <li><strong>5. Watch the Magic ✨</strong><br/>Balances update instantly. Tap <em>Dashboard</em> to see colorful charts and exactly who owes what.</li>
+              <li><strong>6. Finish Up 🏁</strong><br/>When the trip ends, hit <em>Mark Completed</em> → <em>Download PDF</em>. Share the neat summary with everyone.</li>
+              <li><strong>7. Archive & Restore 🗂️</strong><br/>Archive finished groups from the main screen. Restore them anytime if plans change.</li>
+            </ol>
+
+            <p style={{ color: '#8b949e', fontSize: '0.9rem' }}>Tip: Long-press member names to edit them, and swipe or tap “Delete” on any expense to fix mistakes in seconds.</p>
+
+            <Button onClick={() => setOpen(false)} className="full">
+              Got it — let’s split! 🚀
+            </Button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+/* ---------- END ---------- */
