@@ -1,0 +1,35 @@
+{
+    "name": "SplitMate - Smart Expense Sharing",
+    "short_name": "SplitMate",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2C3E50",
+    "theme_color": "#D4AF37",
+    "description": "Effortlessly organize group expenses, track budgets, and settle up with friends. Contact: rahatcodedev@gmail.com",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

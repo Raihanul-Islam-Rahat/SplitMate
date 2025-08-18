@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glass effect gradient -->
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#BBDEFB;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#90CAF9;stop-opacity:0.8"/>
+    </linearGradient>
+    
+    <!-- Money gradient -->
+    <linearGradient id="moneyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50"/>
+      <stop offset="100%" style="stop-color:#2E7D32"/>
+    </linearGradient>
+    
+    <!-- Split line gradient -->
+    <linearGradient id="splitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="100%" style="stop-color:#E53E3E"/>
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="4" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with glass effect -->
+  <circle cx="256" cy="256" r="240" fill="url(#glassGradient)" stroke="#E1F5FE" stroke-width="4" filter="url(#shadow)"/>
+  
+  <!-- Money bills in background (stylized) -->
+  <rect x="120" y="180" width="120" height="80" rx="8" fill="url(#moneyGradient)" opacity="0.3" transform="rotate(-15 180 220)"/>
+  <rect x="280" y="200" width="120" height="80" rx="8" fill="url(#moneyGradient)" opacity="0.3" transform="rotate(10 340 240)"/>
+  <rect x="200" y="260" width="120" height="80" rx="8" fill="url(#moneyGradient)" opacity="0.4" transform="rotate(-5 260 300)"/>
+  
+  <!-- Central split symbol -->
+  <g transform="translate(256,256)">
+    <!-- Splitting line (main feature) -->
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="url(#splitGradient)" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Arrow pointing left -->
+    <polygon points="-80,-20 -80,20 -120,0" fill="url(#splitGradient)"/>
+    
+    <!-- Arrow pointing right -->
+    <polygon points="80,-20 80,20 120,0" fill="url(#splitGradient)"/>
+    
+    <!-- Dollar symbol on left -->
+    <text x="-60" y="-40" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#2E7D32" text-anchor="middle">$</text>
+    
+    <!-- Dollar symbol on right -->
+    <text x="60" y="-40" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#2E7D32" text-anchor="middle">$</text>
+    
+    <!-- Split indicator -->
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF" stroke="url(#splitGradient)" stroke-width="3"/>
+  </g>
+  
+  <!-- People icons (simplified) -->
+  <g opacity="0.6">
+    <!-- Person 1 -->
+    <circle cx="180" cy="120" r="20" fill="#1976D2"/>
+    <rect x="170" y="140" width="20" height="30" rx="5" fill="#1976D2"/>
+    
+    <!-- Person 2 -->
+    <circle cx="332" cy="120" r="20" fill="#1976D2"/>
+    <rect x="322" y="140" width="20" height="30" rx="5" fill="#1976D2"/>
+    
+    <!-- Person 3 -->
+    <circle cx="256" cy="380" r="20" fill="#1976D2"/>
+    <rect x="246" y="400" width="20" height="30" rx="5" fill="#1976D2"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <g opacity="0.4">
+    <!-- Plus sign -->
+    <g transform="translate(380,150)">
+      <circle cx="0" cy="0" r="16" fill="#4CAF50"/>
+      <line x1="-8" y1="0" x2="8" y2="0" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="-8" x2="0" y2="8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Equals sign -->
+    <g transform="translate(132,350)">
+      <circle cx="0" cy="0" r="16" fill="#FF9800"/>
+      <line x1="-6" y1="-3" x2="6" y2="-3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-6" y1="3" x2="6" y2="3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Highlight for glass effect -->
+  <ellipse cx="200" cy="180" rx="60" ry="30" fill="rgba(255,255,255,0.3)" transform="rotate(-30 200 180)"/>
+</svg>

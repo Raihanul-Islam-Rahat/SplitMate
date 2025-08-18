@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient - Dark Navy -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C3E50"/>
+      <stop offset="100%" style="stop-color:#1A252F"/>
+    </linearGradient>
+    
+    <!-- Gold gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="512" cy="512" r="512" fill="url(#bgGradient)"/>
+  
+  <!-- Golden border -->
+  <circle cx="512" cy="512" r="480" fill="none" stroke="url(#goldGradient)" stroke-width="12"/>
+  
+  <!-- Dollar sign -->
+  <g transform="translate(512,512)">
+    <!-- Dollar symbol -->
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="480" font-weight="bold" 
+          fill="url(#goldGradient)" text-anchor="middle" dominant-baseline="middle">$</text>
+    
+    <!-- Diagonal slash -->
+    <line x1="-200" y1="200" x2="200" y2="-200" stroke="url(#goldGradient)" 
+          stroke-width="48" stroke-linecap="round"/>
+  </g>
+</svg>
