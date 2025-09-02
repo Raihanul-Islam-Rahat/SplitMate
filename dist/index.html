@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/split-icon-223366c7.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMTkyIDE5MiI+DQogIDwhLS0gQmFja2dyb3VuZCBjaXJjbGUgLS0+DQogIDxjaXJjbGUgY3g9Ijk2IiBjeT0iOTYiIHI9Ijk2IiBmaWxsPSIjMWUyOTNiIi8+DQogIA0KICA8IS0tIE91dGVyIHJpbmcgLS0+DQogIDxjaXJjbGUgY3g9Ijk2IiBjeT0iOTYiIHI9IjYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNTllMGIiIHN0cm9rZS13aWR0aD0iOCIvPg0KICANCiAgPCEtLSBEb2xsYXIgc2lnbiAtLT4NCiAgPHRleHQgeD0iOTYiIHk9IjExNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjYwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2Y1OWUwYiI+JDwvdGV4dD4NCiAgDQogIDwhLS0gU3BsaXQgbGluZSAtLT4NCiAgPGxpbmUgeDE9IjUwIiB5MT0iMTE1IiB4Mj0iMTQyIiB5Mj0iNzciIHN0cm9rZT0iI2Y1OWUwYiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4NCjwvc3ZnPg==" />
+    <link rel="apple-touch-icon" href="data:image/png;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMTkyIDE5MiI+DQogIDwhLS0gQmFja2dyb3VuZCBjaXJjbGUgLS0+DQogIDxjaXJjbGUgY3g9Ijk2IiBjeT0iOTYiIHI9Ijk2IiBmaWxsPSIjMWUyOTNiIi8+DQogIA0KICA8IS0tIE91dGVyIHJpbmcgLS0+DQogIDxjaXJjbGUgY3g9Ijk2IiBjeT0iOTYiIHI9IjYwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNTllMGIiIHN0cm9rZS13aWR0aD0iOCIvPg0KICANCiAgPCEtLSBEb2xsYXIgc2lnbiAtLT4NCiAgPHRleHQgeD0iOTYiIHk9IjExNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkludGVyLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjYwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2Y1OWUwYiI+JDwvdGV4dD4NCiAgDQogIDwhLS0gU3BsaXQgbGluZSAtLT4NCiAgPGxpbmUgeDE9IjUwIiB5MT0iMTE1IiB4Mj0iMTQyIiB5Mj0iNzciIHN0cm9rZT0iI2Y1OWUwYiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4NCjwvc3ZnPg==" />
+    <link rel="manifest" href="data:application/json;base64,ew0KICAibmFtZSI6ICJTcGxpdE1hdGUgLSBTcGxpdCBFeHBlbnNlcyBFZmZvcnRsZXNzbHkiLA0KICAic2hvcnRfbmFtZSI6ICJTcGxpdE1hdGUiLA0KICAiZGVzY3JpcHRpb24iOiAiRWFzaWx5IHNwbGl0IHRyYXZlbCBhbmQgZ3JvdXAgZXhwZW5zZXMgd2l0aCBmcmllbmRzLiBUcmFjayBzcGVuZGluZywgbWFuYWdlIGJ1ZGdldHMsIGFuZCBzZXR0bGUgdXAgd2l0aCBzbWFydCBleHBlbnNlIHRyYWNraW5nLiIsDQogICJzdGFydF91cmwiOiAiLyIsDQogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLA0KICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMWUyOTNiIiwNCiAgInRoZW1lX2NvbG9yIjogIiNmNTllMGIiLA0KICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQtcHJpbWFyeSIsDQogICJpY29ucyI6IFsNCiAgICB7DQogICAgICAic3JjIjogIi9zcGxpdC1pY29uLnN2ZyIsDQogICAgICAic2l6ZXMiOiAiYW55IiwNCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiDQogICAgfSwNCiAgICB7DQogICAgICAic3JjIjogIi9pY29uLTE5Mi5wbmciLA0KICAgICAgInNpemVzIjogIjE5MngxOTIiLA0KICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIg0KICAgIH0sDQogICAgew0KICAgICAgInNyYyI6ICIvaWNvbi0xOTIucG5nIiwNCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwNCiAgICAgICJ0eXBlIjogImltYWdlL3BuZyINCiAgICB9DQogIF0sDQogICJjYXRlZ29yaWVzIjogWyJmaW5hbmNlIiwgInByb2R1Y3Rpdml0eSIsICJ1dGlsaXRpZXMiXSwNCiAgImxhbmciOiAiZW4iLA0KICAiZGlyIjogImx0ciINCn0=" />
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SplitMate - Split expenses with friends effortlessly" />
+    <meta name="keywords" content="expense splitting, travel expenses, group expenses, expense tracker" />
+    <meta name="author" content="md.raihanulislam.x@gmail.com" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://splitmate-app.com/" />
+    <meta property="og:title" content="SplitMate - Split Expenses Effortlessly" />
+    <meta property="og:description" content="Easily split travel and group expenses with friends. Track spending, manage budgets, and settle up with smart AI-powered receipt scanning." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://splitmate-app.com/" />
+    <meta property="twitter:title" content="SplitMate - Split Expenses Effortlessly" />
+    <meta property="twitter:description" content="Easily split travel and group expenses with friends. Track spending, manage budgets, and settle up with smart AI-powered receipt scanning." />
+    
+    <title>SplitMate - Split Expenses Effortlessly</title>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Critical CSS for loading state */
+      body {
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: #000000;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading spinner */
+      .loading-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #581c87 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(16, 185, 129, 0.3);
+        border-top: 3px solid #10b981;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        margin-top: 20px;
+        color: #10b981;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-4d194258.js"></script>
+    <link rel="stylesheet" href="/assets/index-b62e5a84.css">
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading state shown before React loads -->
+      <div class="loading-container">
+        <div style="text-align: center;">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Loading SplitMate...</div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
